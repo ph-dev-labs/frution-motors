@@ -36,7 +36,7 @@ export default function Home() {
 				<Banners />
 				<Testimonials />
 				<CarReview1 />
-				<Blog1 />
+				{/* <Blog1 /> */}
 				<App />
 			</Layout>
 		</>
