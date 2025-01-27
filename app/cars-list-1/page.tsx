@@ -63,11 +63,11 @@ export default function CarsList1() {
 								<img className="w-100 h-100 img-fluid img-banner" src="/assets/imgs/page-header/banner6.png" alt="Frution Motors" />
 							</div>
 							<div className="container position-absolute z-1 top-50 start-50 pb-70 translate-middle text-center">
-								<span className="text-sm-bold bg-2 px-4 py-3 rounded-12">Find cars for sale and for rent near you</span>
+								<span className="text-sm-bold bg-2 px-4 py-3 rounded-12">Find New & Used Cars For Sale</span>
 								<h2 className="text-white mt-4">Find Your Perfect Car</h2>
-								<span className="text-white text-lg-medium">Search and find your best car rental with easy way</span>
+								<span className="text-white text-lg-medium">Search and buy your best </span>
 							</div>
-							<div className="background-body position-absolute z-1 top-100 start-50 translate-middle px-3 py-2 rounded-12 border d-flex gap-3 d-none d-none d-md-flex">
+							{/* <div className="background-body position-absolute z-1 top-100 start-50 translate-middle px-3 py-2 rounded-12 border d-flex gap-3 d-none d-none d-md-flex">
 								<Link href="/" className="neutral-700 text-md-medium">Home</Link>
 								<span className="@@ds-prev-page">
 									<img src="/assets/imgs/template/icons/arrow-right.svg" alt="Frution Motors" />
@@ -77,27 +77,11 @@ export default function CarsList1() {
 									<img src="/assets/imgs/template/icons/arrow-right.svg" alt="Frution Motors" />
 								</span>
 								<Link href="#" className="neutral-1000 text-md-bold text-nowrap">@@current-page</Link>
-							</div>
+							</div> */}
 						</div>
 					</div>
 					{/* search 1 */}
-					<section className="box-section box-search-advance-home10 background-body">
-						<div className="container">
-							<div className="box-search-advance background-card wow fadeIn">
-								<div className="box-top-search">
-									<div className="left-top-search">
-										<Link className="category-link text-sm-bold btn-click active" href="#">All cars</Link>
-										<Link className="category-link text-sm-bold btn-click" href="#">New cars</Link>
-										<Link className="category-link text-sm-bold btn-click" href="#">Used cars</Link>
-									</div>
-									<div className="right-top-search d-none d-md-flex">
-										<Link className="text-sm-medium need-some-help" href="/contact">Need help?</Link>
-									</div>
-								</div>
-								<HeroSearch />
-							</div>
-						</div>
-					</section>
+				
 					{/* cars-listing-1 */}
 					<section className="section-box pt-50 background-body">
 						<div className="container">

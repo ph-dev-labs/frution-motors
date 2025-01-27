@@ -9,6 +9,8 @@ export default function Hero1() {
 					<p className="text-primary text-md-bold wow fadeInUp">Find Your Perfect Car</p>
 					<h1 className="color-white mb-35 wow fadeInUp">Looking for a vehicle? <br className="d-none d-lg-block" />You’re
 						in the perfect spot.</h1>
+
+						<h1 className="color-white mb-35 wow fadeInUp">Browse our huge collections of  <br className="d-none d-lg-block" />Our Car Iventory.</h1>
 					<ul className="list-ticks-green">
 						<li className="wow fadeInUp" data-wow-delay="0.1s">High quality at a low cost.</li>
 						<li className="wow fadeInUp" data-wow-delay="0.2s">Premium services</li>

@@ -5,7 +5,7 @@ export default function Footer1() {
 		<>
 			<footer className="footer">
 				<div className="container">
-					<div className="footer-top">
+					{/* <div className="footer-top">
 						<div className="row align-items-center">
 							<div className="col-lg-5 col-md-6 text-center text-md-start">
 								<h5 className="color-white wow fadeInDown">Subscribe to see secret deals prices drop the moment you
@@ -20,7 +20,7 @@ export default function Footer1() {
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> */}
 					<div className="row">
 						<div className="col-md-3 col-sm-12 footer-1">
 							<div className="mt-20 mb-20">
@@ -29,14 +29,13 @@ export default function Footer1() {
 									<img className="dark-mode" alt="Frution Motors" src="/assets/imgs/template/logo-w.svg" />
 								</Link>
 								<div className="box-info-contact mt-0">
-									<p className="text-md neutral-400 icon-address">2356 Oakwood Drive, Suite 18, San Francisco,
-										California 94111, US</p>
-									<p className="text-md neutral-400 icon-worktime">Hours: 8:00 - 17:00, Mon - Sat</p>
-									<p className="text-md neutral-400 icon-email">support@Frution Motors.com</p>
+									<p className="text-md neutral-400 icon-address">Address: Address: Plot 100, KM5, East West Road Nkpolu Rumuigbo, Port Harcourt Rivers State.</p>
+									<p className="text-md neutral-400 icon-worktime">Hours: 8:00 AM- 6:00 PM, Mon - Sat</p>
+									<Link href="mailto:fruitionenterprise24@gmail.com" className="text-md neutral-400 icon-email">fruitionenterprise24@gmail.com</Link>
 								</div>
 								<div className="box-need-help">
 									<p className="need-help text-md-medium mb-5">Need help? Call us</p>
-									<br /><Link className="heading-6 phone-support" href="/tel:+1 222-555-33-99">+1 222-555-33-99</Link>
+									<br /><Link className="heading-6 phone-support" href="/tel:+1 222-555-33-99">0810471769</Link>
 								</div>
 							</div>
 						</div>
@@ -44,49 +43,29 @@ export default function Footer1() {
 							<h6 className="text-linear-3">Company</h6>
 							<ul className="menu-footer">
 								<li><Link href="#">About Us</Link></li>
-								<li><Link href="#">Our Awards</Link></li>
-								<li><Link href="#">Agencies</Link></li>
-								<li><Link href="#">Copyright Notices</Link></li>
-								<li><Link href="#">Terms of Use</Link></li>
-								<li><Link href="#">Privacy Notice</Link></li>
-								<li><Link href="#">Lost &amp; Found</Link></li>
+								<li><Link href="#">Our Services</Link></li>
+								
 							</ul>
 						</div>
 						<div className="col-md-2 col-xs-6 footer-2">
-							<h6 className="text-linear-3">Our Services</h6>
+							<h6 className="text-linear-3">Cars</h6>
 							<ul className="menu-footer">
-								<li><Link href="#">Car Rental Services</Link></li>
-								<li><Link href="#">Vehicle Leasing Options</Link></li>
-								<li><Link href="#">Long-Term Car Rentals</Link></li>
+								<li><Link href="/">Buy A Car</Link></li>
+								
 								<li><Link href="#">Car Sales and Trade-Ins</Link></li>
-								<li><Link href="#">Luxury Car Rentals</Link></li>
-								<li><Link href="#">Rent-to-Own Programs</Link></li>
-								<li><Link href="#">Fleet Management Solutions</Link></li>
+								
 							</ul>
 						</div>
-						<div className="col-md-2 col-xs-6 footer-4">
-							<h6 className="text-linear-3">Our Partners</h6>
-							<ul className="menu-footer">
-								<li><Link href="#">Affiliates</Link></li>
-								<li><Link href="#">Travel Agents</Link></li>
-								<li><Link href="#">AARP Members</Link></li>
-								<li><Link href="#">Points Programs</Link></li>
-								<li><Link href="#">Military &amp; Veterans</Link></li>
-								<li><Link href="#">Work with us</Link></li>
-								<li><Link href="#">Advertise with us</Link></li>
-							</ul>
-						</div>
-						<div className="col-md-3 col-xs-6 footer-5">
-							<h6 className="text-linear-3">Support</h6>
-							<ul className="menu-footer">
-								<li><Link href="#">Forum support</Link></li>
-								<li><Link href="#">Help Center</Link></li>
-								<li><Link href="#">Live chat</Link></li>
-								<li><Link href="#">How it works</Link></li>
-								<li><Link href="#">Security</Link></li>
-								<li><Link href="#">Refund Policy</Link></li>
-							</ul>
-						</div>
+						
+							<div className="col-md-3 col-xs-6 footer-5">
+								<h6 className="text-linear-3">Support</h6>
+								<ul className="menu-footer">
+							
+									<li><Link className="heading-6 phone-support" href="/tel:+1 222-555-33-99">0810471769</Link></li>
+									<li><Link href="#">Live chat</Link></li>
+									
+								</ul>
+							</div>
 					</div>
 					<div className="footer-bottom mt-50">
 						<div className="row align-items-center justify-content-center">
