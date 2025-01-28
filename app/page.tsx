@@ -23,21 +23,21 @@ export default function Home() {
 
 			<Layout headerStyle={1} footerStyle={1}>
 				<Hero1 />
-				<Search1 />
+				{/* <Search1 /> */}
 				<Brand1 />
 				<CarsListing1 />
-				<Cta1 />
+				{/* <Cta1 /> */}
 				<Categories1 />
 				<WhyUs1 />
 				{/* <Cta2 /> */}
 				<CarsListing2 />
-				<Cta3 />
-				<Services1 />
-				<Banners />
-				<Testimonials />
-				<CarReview1 />
+				{/* <Cta3 /> */}
+				{/* <Services1 /> */}
+				{/* <Banners /> */}
+				{/* <Testimonials /> */}
+				{/* <CarReview1 /> */}
 				{/* <Blog1 /> */}
-				<App />
+				{/* <App /> */}
 			</Layout>
 		</>
 	)
