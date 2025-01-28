@@ -4,7 +4,7 @@ export default function ByCarType({ uniqueCarTypes, filter, handleCheckboxChange
 		<>
 			<div className="box-collapse scrollFilter">
 				<ul className="list-filter-checkbox">
-					{uniqueCarTypes.map((car: any,) => (
+					{uniqueCarTypes?.map((car: any,) => (
 						<li key={car}>
 							<label className="cb-container">
 								<input

@@ -14,7 +14,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 			<div className={`mobile-header-active mobile-header-wrapper-style perfect-scrollbar button-bg-2 ${isMobileMenu ? 'sidebar-visible' : ''}`}>
 				<PerfectScrollbar className="mobile-header-wrapper-inner">
 					<div className="mobile-header-logo">
-						<Link className="d-flex" href="/"><img className="light-mode" alt="Frution Motors" src="/assets/imgs/template/logo-d.svg" /><img className="dark-mode" alt="Frution Motors" src="/assets/imgs/template/logo-w.svg" /></Link>
+						<Link className="d-flex" href="/"><img className="light-mode" alt="Frution Motors" src="/assets/imgs/template/frution.jpg" /><img className="dark-mode" alt="Frution Motors" src="/assets/imgs/template/logo-w.svg" /></Link>
 						<div className="burger-icon burger-icon-white" onClick={handleMobileMenu} />
 					</div>
 					<div className="mobile-header-content-area">

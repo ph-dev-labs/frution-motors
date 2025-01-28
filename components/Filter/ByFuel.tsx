@@ -4,12 +4,12 @@ export default function ByFuel({ uniqueFuelTypes, filter, handleCheckboxChange }
 		<>
 			<div className="box-collapse scrollFilter">
 				<ul className="list-filter-checkbox">
-					{uniqueFuelTypes.map((fuel: any,) => (
+					{uniqueFuelTypes?.map((fuel: any,) => (
 						<li key={fuel}>
 							<label className="cb-container">
 								<input
 									type="checkbox"
-									checked={filter.fuelType.includes(fuel)}
+									checked={filter.fuelType?.includes(fuel)}
 									onChange={handleCheckboxChange("fuelType", fuel)}
 								/>
 

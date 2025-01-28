@@ -29,7 +29,7 @@ export default function Home() {
 				<Cta1 />
 				<Categories1 />
 				<WhyUs1 />
-				<Cta2 />
+				{/* <Cta2 /> */}
 				<CarsListing2 />
 				<Cta3 />
 				<Services1 />

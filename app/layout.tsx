@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Urbanist } from "next/font/google"
 import "@/node_modules/react-modal-video/css/modal-video.css"
 import "/public/assets/css/main.css"
+import QueryProvider from "@/provider/QueryProvider"
 
 const urbanist = Urbanist({
 	weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -22,7 +23,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${urbanist.variable}`}>{children}</body>
+			<QueryProvider><body className={`${urbanist.variable}`}>{children}</body></QueryProvider>
 		</html>
 	)
 }

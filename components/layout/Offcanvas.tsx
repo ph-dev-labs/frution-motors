@@ -8,8 +8,8 @@ export default function Offcanvas({ isOffcanvas, handleOffcanvas }: any) {
 					<div className="sidebar-canvas-head">
 						<div className="sidebar-canvas-logo">
 							<Link className="d-flex" href="/">
-								<img className="light-mode" alt="Frution Motors" src="/assets/imgs/template/logo-d.svg" />
-								<img className="dark-mode" alt="Frution Motors" src="/assets/imgs/template/logo-w.svg" />
+								<img className="light-mode" alt="Frution Motors" src="/assets/imgs/template/frution.jpg" />
+								<img className="dark-mode" alt="Frution Motors" src="/assets/imgs/template/frution.jpg" />
 							</Link>
 						</div>
 						<div className="sidebar-canvas-lang">
