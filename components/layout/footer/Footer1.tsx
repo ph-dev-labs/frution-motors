@@ -42,7 +42,7 @@ export default function Footer1() {
 						<div className="col-md-2 col-xs-6 footer-3">
 							<h6 className="text-linear-3">Company</h6>
 							<ul className="menu-footer">
-								<li><Link href="#">About Us</Link></li>
+								<li><Link href="/about-us">About Us</Link></li>
 								<li><Link href="#">Our Services</Link></li>
 								
 							</ul>

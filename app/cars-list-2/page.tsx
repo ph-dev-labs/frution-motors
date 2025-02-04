@@ -108,6 +108,7 @@ export default function CarsList2() {
 										<div className="row">
 											{paginatedCars.map((car) => (
 												<div className="col-lg-3 col-md-6" key={car.id}>
+													
 													<CarCard1 car={car} />
 												</div>
 											))}

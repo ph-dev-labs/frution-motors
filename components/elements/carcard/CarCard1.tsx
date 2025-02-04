@@ -15,7 +15,7 @@ interface CarCardProps {
   }
 }
 
-export default function CarCard1({ car }: CarCardProps) {
+export default function CarCard1({ car }: any) {
   const fallbackImage = '/assets/imgs/page/homepage2/car-default.png'
 
   return (
