@@ -8,6 +8,7 @@ import Image from "next/image";
 export default function CarsListing1() {
   const { data, isLoading, error } = useCars();
   
+  
   // Fallback image for cars without an image
   const FALLBACK_IMAGE = "/assets/imgs/cars-listing/cars-listing-1/car-1.png";
 
