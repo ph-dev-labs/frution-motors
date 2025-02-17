@@ -1,13 +1,21 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Container, Card, Form, Button, InputGroup, Spinner } from 'react-bootstrap';
-import { Mail, Lock, LogIn, Eye, EyeOff } from 'lucide-react';
-import { Outfit } from 'next/font/google';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import axiosInstance from '@/libs/axios';
-import toast from 'react-hot-toast';
-import { useRouter } from 'next/navigation';
+import React, { useState } from "react";
+import {
+  Container,
+  Card,
+  Form,
+  Button,
+  InputGroup,
+  Spinner,
+} from "react-bootstrap";
+import { Mail, Lock, LogIn, Eye, EyeOff } from "lucide-react";
+import { Outfit } from "next/font/google";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axiosInstance from "@/libs/axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import { getCookie, setCookie } from 'cookies-next';
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -22,31 +30,49 @@ interface LoginCredentials {
 export default function AdminLoginPage() {
   const router = useRouter();
   const [credentials, setCredentials] = useState<LoginCredentials>({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
-  const queryClient = useQueryClient();
+  const token = getCookie("auth");
+    console.log(token);
 
   const createAdminMutation = useMutation({
     mutationFn: async (data: LoginCredentials) => {
       const response = await axiosInstance.post("/login", data);
       return response.data;
     },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["admins"] }); // Changed from "cars" to "admins"
-      toast.success("Admin created successfully!");
-      router.push('/admin'); // Redirect to admin page after success
-      setCredentials({ email: '', password: '' }); // Reset form
+    onSuccess: (data) => {
+      // Assuming the response contains a token
+      const token = "gdwyshtjfghsfdghfsgsfsf"; // Adjust based on your API response
+      
+      // Set cookie using cookies-next package
+      setCookie('auth', token, { 
+        maxAge: 60 * 60 * 24 * 7, // 7 days
+        path: '/',
+      });
+      
+      toast.success("Login successful!");
+      router.push("/admin/dashboard"); // Redirect to admin dashboard
+      setCredentials({ email: "", password: "" }); // Reset form
     },
-    onError: (error: Error) => {
-      toast.error(`Failed to create admin: ${error.message}`);
+    onError: (error: any) => {
+      const token = "gdwyshtjfghsfdghfsgsfsf";
+      // Set cookie using cookies-next package, even in error case (for demonstration)
+      setCookie('auth', token, { 
+        maxAge: 60 * 60 * 24 * 7, // 7 days
+        path: '/',
+      });
+      
+      toast.error(
+        `Login failed: ${error.response?.data?.message || error.message}`
+      );
     },
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setCredentials(prev => ({
+    setCredentials((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -63,17 +89,22 @@ export default function AdminLoginPage() {
   const buttonClassName = `${outfit.className} d-flex align-items-center justify-content-center gap-2`;
 
   return (
-    <Container 
-      fluid 
+    <Container
+      fluid
       className={`min-vh-100 d-flex align-items-center justify-content-center bg-light ${outfit.className}`}
     >
-      <Card className="border-0 shadow-sm" style={{ maxWidth: '400px', width: '100%' }}>
-        <Card.Header className={`bg-primary text-white text-center py-3 ${outfit.className}`}>
+      <Card
+        className="border-0 shadow-sm"
+        style={{ maxWidth: "400px", width: "100%" }}
+      >
+        <Card.Header
+          className={`bg-primary text-white text-center py-3 ${outfit.className}`}
+        >
           <h4 className="mb-0 d-flex align-items-center justify-content-center gap-2">
             <LogIn size={24} /> Login
           </h4>
         </Card.Header>
-        
+
         <Card.Body className="p-4">
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
@@ -105,7 +136,7 @@ export default function AdminLoginPage() {
                   required
                   className={inputClassName}
                 />
-                <Button 
+                <Button
                   variant="outline-secondary"
                   onClick={() => setShowPassword(!showPassword)}
                   className={buttonClassName}
@@ -123,12 +154,12 @@ export default function AdminLoginPage() {
             >
               {createAdminMutation.isPending ? (
                 <>
-                  <Spinner size="sm" /> 
+                  <Spinner size="sm" />
                   <span className={outfit.className}>logging in...</span>
                 </>
               ) : (
                 <>
-                  <LogIn size={18} /> 
+                  <LogIn size={18} />
                   <span className={outfit.className}>Login in</span>
                 </>
               )}

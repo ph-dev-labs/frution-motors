@@ -9,6 +9,7 @@ import axiosInstance from "@/libs/axios";
 import toast from "react-hot-toast";
 import Navigation from "../components/Navigation";
 
+
 const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
@@ -18,20 +19,20 @@ interface LoginCredentials {
   name: string;
 }
 
-export default function CreateCategoryPage() {
+function CreateCategoryPage() {
   const [credentials, setCredentials] = useState<LoginCredentials>({
     name: "",
   });
 
   const queryClient = useQueryClient();
 
-  const createAdminMutation = useMutation({
+  const createCategoryMutation = useMutation({
     mutationFn: async (data: LoginCredentials) => {
       const response = await axiosInstance.post("/createCategory", data);
       return response.data;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["admins"] }); // Changed from "cars" to "admins"
+      queryClient.invalidateQueries({ queryKey: ["categories"] }); // Adjust the query key as necessary
       toast.success("Category created successfully!");
       setCredentials({ name: "" }); // Reset form
     },
@@ -50,7 +51,7 @@ export default function CreateCategoryPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    createAdminMutation.mutate(credentials);
+    createCategoryMutation.mutate(credentials);
   };
 
   // Create consistent class names
@@ -93,13 +94,12 @@ export default function CreateCategoryPage() {
                   className={inputClassName}
                 />
               </Form.Group>
-              <Button
-                variant="primary"
+              <Button variant="primary"
                 type="submit"
-                disabled={createAdminMutation.isPending}
+                disabled={createCategoryMutation.isPending}
                 className={`w-100 ${buttonClassName}`}
               >
-                {createAdminMutation.isPending ? (
+                {createCategoryMutation.isPending ? (
                   <>
                     <Spinner size="sm" />
                     <span className={outfit.className}>Creating...</span>
@@ -118,3 +118,5 @@ export default function CreateCategoryPage() {
     </>
   );
 }
+
+export default CreateCategoryPage;

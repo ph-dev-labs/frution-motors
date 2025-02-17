@@ -17,6 +17,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Navigation from "../components/Navigation";
 
+
 const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
@@ -27,7 +28,7 @@ interface LoginCredentials {
   password: string;
 }
 
-export default function CreateAdminPage() {
+function CreateAdminPage() {
   const router = useRouter();
   const [credentials, setCredentials] = useState<LoginCredentials>({
     email: "",
@@ -44,7 +45,6 @@ export default function CreateAdminPage() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admins"] }); // Changed from "cars" to "admins"
       toast.success("Admin created successfully!");
-      router.push("/admin"); // Redirect to admin page after success
       setCredentials({ email: "", password: "" }); // Reset form
     },
     onError: (error: Error) => {
@@ -155,3 +155,5 @@ export default function CreateAdminPage() {
     </>
   );
 }
+
+export default CreateAdminPage

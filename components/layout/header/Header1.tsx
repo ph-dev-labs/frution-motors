@@ -112,14 +112,14 @@ export default function Header1({
                   <img
                     className="light-mode  w-75 h-20"
                     alt="Frution Motors"
-                    src="/assets/imgs/template/frution.jpg"
-                    style={{ height: "6rem" }}
+                    src="/assets/imgs/template/frution.png"
+                    style={{ height: "8rem", }}
                   />
                   <img
                     className="dark-mode"
                     alt="Frution Motors"
-                    src="/assets/imgs/template/frution.jpg"
-                    style={{ height: "6rem" }}
+                    src="/assets/imgs/template/frution.png"
+                    style={{ height: "8rem" }}
                   />
                 </Link>
               </div>

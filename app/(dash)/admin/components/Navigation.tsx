@@ -37,7 +37,7 @@ const Navigation = () => {
                 Dashboard
               </Nav.Link>
             </Link>
-            <Link href="/admin/add-car" passHref legacyBehavior>
+            <Link href="/admin/add-car/new" passHref legacyBehavior>
               <Nav.Link 
                 active={pathname === '/add-car'}
                 className="d-flex align-items-center gap-2"
