@@ -20,7 +20,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import axiosInstance from "@/libs/axios";
-import { Car } from "@/util/types";
+import { Car, formatPrice } from "@/util/types";
 import { Outfit } from "next/font/google";
 import getSymbolFromCurrency from "currency-symbol-map";
 import Navigation from "../components/Navigation";
@@ -69,7 +69,7 @@ function AdminDashboard() {
   // Memoize stats calculation to prevent recalculation on every render
   const stats = useMemo(() => {
     const uniqueBrands = new Set(cars.map((car) => car.brand_name));
-    const uniqueCategories = new Set(cars.map((car) => car.category));
+
     const averagePrice = cars.length
       ? Math.round(cars.reduce((acc, car) => acc + car.price, 0) / cars.length)
       : 0;
@@ -89,13 +89,13 @@ function AdminDashboard() {
       },
       {
         title: "Categories",
-        value: uniqueCategories.size,
+        value: data?.length,
         icon: Settings,
         color: "info",
       },
       {
         title: "Average Price",
-        value: `${getSymbolFromCurrency("NGN")}${10000000}`,
+        value: `${getSymbolFromCurrency("NGN")}${formatPrice(averagePrice)}`,
         icon: DollarSign,
         color: "warning",
       },
@@ -171,8 +171,8 @@ function AdminDashboard() {
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
               >
-                {data?.map((category: any) => (
-                  <option key={category} value={category?.name}>
+                {data?.map((category: any, index:number) => (
+                  <option key={index} value={category?.name}>
                     {category.name}
                   </option>
                 ))}

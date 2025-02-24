@@ -1,4 +1,5 @@
 
+import getSymbolFromCurrency from "currency-symbol-map"
 import Link from "next/link"
 
 export default function CarsListing2() {
@@ -32,17 +33,17 @@ export default function CarsListing2() {
 									</Link>
 								</div>
 								<div className="card-info p-4 pt-30">
-									<div className="card-rating">
+									{/* <div className="card-rating">
 										<div className="card-left" />
 										<div className="card-right">
 											<span className="rating text-xs-medium py-1 rounded-pill">4.96 <span className="text-xs-medium neutral-500">(672 reviews)</span></span>
 										</div>
-									</div>
+									</div> */}
 									<div className="card-title"><Link className="text-lg-bold neutral-1000 text-nowrap" href="/cars-details-2">Volkswagen Golf GTD</Link></div>
 									<div className="card-program">
-										<div className="card-location">
+										{/* <div className="card-location">
 											<p className="text-location text-sm-medium neutral-500">Manchester, England</p>
-										</div>
+										</div> */}
 										<div className="card-facitlities">
 											<p className="card-miles text-md-medium">25,100 miles</p>
 											<p className="card-gear text-md-medium">Automatic</p>
@@ -51,7 +52,7 @@ export default function CarsListing2() {
 										</div>
 										<div className="endtime">
 											<div className="card-price">
-												<h6 className="text-lg-bold neutral-1000">$498.25</h6>
+												<h6 className="text-lg-bold neutral-1000">{getSymbolFromCurrency("NGN")}498.25</h6>
 												<p className="text-md-medium neutral-500" />
 											</div>
 											<div className="card-button"><Link className="btn btn-gray" href="/cars-details-2">Book
@@ -69,18 +70,18 @@ export default function CarsListing2() {
 									</Link>
 								</div>
 								<div className="card-info p-4 pt-30">
-									<div className="card-rating">
+									{/* <div className="card-rating">
 										<div className="card-left" />
 										<div className="card-right">
 											<span className="rating text-xs-medium py-1 rounded-pill">4.96 <span className="text-xs-medium neutral-500">(672 reviews)</span></span>
 										</div>
-									</div>
+									</div> */}
 									<div className="card-title"><Link className="text-lg-bold neutral-1000" href="/cars-details-2">Volvo S60 D4 R-Design</Link></div>
 									<div className="card-program">
-										<div className="card-location">
+										{/* <div className="card-location">
 											<p className="text-location text-sm-medium neutral-500">New South Wales, Australia
 											</p>
-										</div>
+										</div> */}
 										<div className="card-facitlities">
 											<p className="card-miles text-md-medium">25,100 miles</p>
 											<p className="card-gear text-md-medium">Automatic</p>
@@ -89,7 +90,7 @@ export default function CarsListing2() {
 										</div>
 										<div className="endtime">
 											<div className="card-price">
-												<h6 className="text-lg-bold neutral-1000">$498.25</h6>
+												<h6 className="text-lg-bold neutral-1000">{getSymbolFromCurrency("NGN")}498.25</h6>
 												<p className="text-md-medium neutral-500" />
 											</div>
 											<div className="card-button"><Link className="btn btn-gray" href="/cars-details-2">Book
@@ -107,17 +108,17 @@ export default function CarsListing2() {
 									</Link>
 								</div>
 								<div className="card-info p-4 pt-30">
-									<div className="card-rating">
+									{/* <div className="card-rating">
 										<div className="card-left" />
 										<div className="card-right">
 											<span className="rating text-xs-medium py-1 rounded-pill">4.96 <span className="text-xs-medium neutral-500">(672 reviews)</span></span>
 										</div>
-									</div>
+									</div> */}
 									<div className="card-title"><Link className="text-lg-bold neutral-1000" href="/cars-details-2">Jaguar XE 2.0d R-Sport</Link></div>
 									<div className="card-program">
-										<div className="card-location">
+										{/* <div className="card-location">
 											<p className="text-location text-sm-medium neutral-500">Manchester, England</p>
-										</div>
+										</div> */}
 										<div className="card-facitlities">
 											<p className="card-miles text-md-medium">25,100 miles</p>
 											<p className="card-gear text-md-medium">Automatic</p>
@@ -126,7 +127,7 @@ export default function CarsListing2() {
 										</div>
 										<div className="endtime">
 											<div className="card-price">
-												<h6 className="text-lg-bold neutral-1000">$498.25</h6>
+												<h6 className="text-lg-bold neutral-1000">{getSymbolFromCurrency("NGN")}498.25</h6>
 												<p className="text-md-medium neutral-500" />
 											</div>
 											<div className="card-button"><Link className="btn btn-gray" href="/cars-details-2">Book
@@ -144,17 +145,17 @@ export default function CarsListing2() {
 									</Link>
 								</div>
 								<div className="card-info p-4 pt-30">
-									<div className="card-rating">
+									{/* <div className="card-rating">
 										<div className="card-left" />
 										<div className="card-right">
 											<span className="rating text-xs-medium py-1 rounded-pill">4.96 <span className="text-xs-medium neutral-500">(672 reviews)</span></span>
 										</div>
-									</div>
+									</div> */}
 									<div className="card-title"><Link className="text-lg-bold neutral-1000" href="/cars-details-2">Lexus IS 300h F Sport</Link></div>
 									<div className="card-program">
-										<div className="card-location">
+										{/* <div className="card-location">
 											<p className="text-location text-sm-medium neutral-500">Manchester, England</p>
-										</div>
+										</div> */}
 										<div className="card-facitlities">
 											<p className="card-miles text-md-medium">25,100 miles</p>
 											<p className="card-gear text-md-medium">Automatic</p>
@@ -163,7 +164,7 @@ export default function CarsListing2() {
 										</div>
 										<div className="endtime">
 											<div className="card-price">
-												<h6 className="text-lg-bold neutral-1000">$498.25</h6>
+												<h6 className="text-lg-bold neutral-1000">{getSymbolFromCurrency("NGN")}498.25</h6>
 												<p className="text-md-medium neutral-500" />
 											</div>
 											<div className="card-button"><Link className="btn btn-gray" href="/cars-details-2">Book

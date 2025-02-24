@@ -344,8 +344,8 @@ const CarForm: React.FC<CarFormProps> = ({
             >
                {
                 //@ts-expect-error - unknown type
-               categoryData?.map((category:any) => (
-                  <option key={category} value={category?.name}>
+               categoryData?.map((category:any, index) => (
+                  <option key={index} value={category?.name}>
                     {category.name}
                   </option>
                 ))}

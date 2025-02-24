@@ -25,8 +25,8 @@ export default function Footer1() {
 						<div className="col-md-3 col-sm-12 footer-1">
 							<div className="mt-20 mb-20">
 								<Link className="d-flex" href="/">
-									<img className="light-mode" alt="Frution Motors" src="/assets/imgs/template/logo-w.svg" />
-									<img className="dark-mode" alt="Frution Motors" src="/assets/imgs/template/logo-w.svg" />
+									<img className="light-mode" alt="Frution Motors" src="/assets/imgs/template/frution.png" style={{ height: "14rem" }} />
+									<img className="dark-mode" alt="Frution Motors" src="/assets/imgs/template/frution.png" style={{ height: "14rem" }} />
 								</Link>
 								<div className="box-info-contact mt-0">
 									<p className="text-md neutral-400 icon-address">Address: Address: Plot 100, KM5, East West Road Nkpolu Rumuigbo, Port Harcourt Rivers State.</p>

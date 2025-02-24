@@ -42,55 +42,58 @@ TABLE CONTENT
 @import url(../css/plugins/odometer.css);
 
 :root {
-	--urbanist: "Urbanist", sans-serif;
-	--bs-border-color: #dde1de;
-	--bs-color-white: #ffffff;
-	--bs-color-black: #000000;
-	--bs-color-700: #4d4d4d;
-	--bs-background-1000: #000000;
-	--bs-background-white: #ffffff;
-	--bs-color-1000: #000000;
-	--bs-background-body: #ffffff;
-	--bs-background-1: #fff0ec;
-	--bs-background-2: #d8f4db;
-	--bs-background-3: #e3f0ff;
-	--bs-background-4: #f6f3fc;
-	--bs-background-5: #ffec88;
-	--bs-background-6: #9dd3fb;
-	--bs-background-7: #fcf2fa;
-	--bs-background-8: #f6f3fc;
-	--bs-background-9: #fcfcf3;
-	--bs-background-12: #a8e2ef;
-	--bs-background-card: #ffffff;
-	--bs-neutral-0: #ffffff;
-	--bs-neutral-100: #f2f4f6;
-	--bs-neutral-200: #e4e6e8;
-	--bs-neutral-300: #d6d7d8;
-	--bs-neutral-400: #8e8e8e;
-	--bs-neutral-500: #737373;
-	--bs-neutral-600: #575756;
-	--bs-neutral-700: #4d4d4d;
-	--bs-neutral-800: #454545;
-	--bs-neutral-900: #313131;
-	--bs-neutral-1000: #000000;
-	--bs-button-bg: #70f46d;
-	--bs-button-bg-2: #f2f4f6;
-	--bs-button-text: #101010;
-	--bs-button-text-2: #000000;
-	--bs-brand-2: #70f46d;
-	--bs-brand-2-dark: #70f46d;
-	--bs-brand-2-darken: #5edd5b;
-	--bs-brand-2-light: #2d4a2c;
-	--bs-link-hover-color: #235922;
-	--bs-brand-1: #8acfff;
-	--bs-warning: #ffc700;
-	--bs-success: #34d674;
-	--bs-danger: #ff2e00;
-	--bs-color-grey: #afafaf;
-	--bs-color-2: #c5ff41;
-	--bs-color-grey-2: #f0f0f0;
-	--bs-neutral-950: #1e1e1e;
-	--bs-primary-rgb: 112, 244, 109;
+    --urbanist: "Urbanist", sans-serif;
+    --bs-border-color: #dde1de;
+    --bs-color-white: #ffffff;
+    --bs-color-black: #000000;
+    --bs-color-700: #4d4d4d;
+    --bs-background-1000: #000000;
+    --bs-background-white: #ffffff;
+    --bs-color-1000: #000000;
+    --bs-background-body: #ffffff;
+    /* Changed background colors to fit red theme */
+    --bs-background-1: #fff0f0;
+    --bs-background-2: #ffe5e5;
+    --bs-background-3: #ffdddd;
+    --bs-background-4: #fff5f5;
+    --bs-background-5: #ff8888;
+    --bs-background-6: #ff9999;
+    --bs-background-7: #fff2f2;
+    --bs-background-8: #fff3f3;
+    --bs-background-9: #fcf3f3;
+    --bs-background-12: #ffb3b3;
+    --bs-background-card: #ffffff;
+    /* Neutral colors kept for contrast */
+    --bs-neutral-0: #ffffff;
+    --bs-neutral-100: #f2f4f6;
+    --bs-neutral-200: #e4e6e8;
+    --bs-neutral-300: #d6d7d8;
+    --bs-neutral-400: #8e8e8e;
+    --bs-neutral-500: #737373;
+    --bs-neutral-600: #575756;
+    --bs-neutral-700: #4d4d4d;
+    --bs-neutral-800: #454545;
+    --bs-neutral-900: #313131;
+    --bs-neutral-1000: #000000;
+    /* Changed button and brand colors to red/black theme */
+    --bs-button-bg: #ff0000;
+    --bs-button-bg-2: #afafaf;
+    --bs-button-text: #ffffff;
+    --bs-button-text-2: #ffffff;
+    --bs-brand-2: #ff0000;
+    --bs-brand-2-dark: #cc0000;
+    --bs-brand-2-darken: #990000;
+    --bs-brand-2-light: #ff3333;
+    --bs-link-hover-color: #cc0000;
+    --bs-brand-1: #ff0000;
+    --bs-warning: #ffc700;
+    --bs-success: #34d674;
+    --bs-danger: #ff2e00;
+    --bs-color-grey: #;
+    --bs-color-2: #000000;
+    --bs-color-grey-2: #f0f0f0;
+    --bs-neutral-950: #1e1e1e;
+    --bs-primary-rgb: 255, 0, 0;
 }
 
 /*import vendors*/
@@ -5465,7 +5468,7 @@ label {
 
 .top-bar-2 .text-header .text-unlock {
 	color: var(--bs-neutral-0);
-	background-image: url(../imgs/template/icons/car-front-fill-1.svg);
+	/* background-image: url(../imgs/template/icons/car-front-fill-1.svg); */
 }
 
 .top-bar-2 .text-header .link-secondary {
@@ -8990,7 +8993,7 @@ a.icon-socials:hover svg path {
 .list-ticks-green li {
 	margin-bottom: 18px;
 	padding: 3px 25px 3px 36px;
-	background-image: url(../imgs/template/icons/tick-list.svg);
+	/* background-image: url(../imgs/template/icons/tick-list.svg); */
 	background-repeat: no-repeat;
 	background-position: left center;
 	font-size: 14px;

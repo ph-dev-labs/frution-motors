@@ -4,6 +4,8 @@ import Link from "next/link";
 import { swiperGroup3 } from "@/util/swiperOptions";
 import { useCars } from "@/util/hooks/useGetCars";
 import Image from "next/image";
+import getSymbolFromCurrency from "currency-symbol-map";
+import { formatPrice } from "@/util/types";
 
 export default function CarsListing1() {
   const { data, isLoading, error } = useCars();
@@ -11,6 +13,7 @@ export default function CarsListing1() {
   
   // Fallback image for cars without an image
   const FALLBACK_IMAGE = "/assets/imgs/cars-listing/cars-listing-1/car-1.png";
+  console.log(data)
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading cars</div>;
@@ -78,7 +81,7 @@ export default function CarsListing1() {
                         <div className="card-image">
                           <Link href="/cars-details-1">
                             <Image
-                              src={FALLBACK_IMAGE}
+                              src={car?.image_url}
                               alt={`${car.title} ${car.model}`}
                               width={300}
                               height={200}
@@ -91,7 +94,7 @@ export default function CarsListing1() {
                           </Link>
                         </div>
                         <div className="card-info">
-                          <div className="card-rating">
+                          {/* <div className="card-rating">
                             <div className="card-left" />
                             <div className="card-right">
                               <span className="rating">
@@ -101,7 +104,7 @@ export default function CarsListing1() {
                                 </span>
                               </span>
                             </div>
-                          </div>
+                          </div> */}
                           <div className="card-title">
                             <Link
                               className="heading-6 neutral-1000"
@@ -136,7 +139,7 @@ export default function CarsListing1() {
                                   From
                                 </p>
                                 <h6 className="heading-6 neutral-1000">
-                                  ${car.price || 'N/A'}
+                                {getSymbolFromCurrency("NGN")}{ formatPrice(car.price) || 'N/A'}
                                 </h6>
                               </div>
                               <div className="card-button">

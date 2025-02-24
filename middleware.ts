@@ -1,8 +1,6 @@
-import { getCookie } from "cookies-next";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-// Add paths that need protection
 const protectedPaths = [
   "/admin/dashboard",
   "/admin/add-car",
@@ -10,35 +8,33 @@ const protectedPaths = [
   "/admin/create-category",
 ];
 
-export function  middleware (request: NextRequest) {
+const publicPaths = ["/admin/login"];
+
+export function middleware(request: NextRequest) {
   const currentPath = request.nextUrl.pathname;
-  const token = request.cookies.get('auth')
-  
-  // Only check auth for protected paths
-  // if (protectedPaths.includes(currentPath)) {
-  //   // Use Next.js built-in cookie methods for middleware
+  const token = request.cookies.get('authFruition');
 
-  //   if (!token) {
-  //     // Redirect to login page with callback URL
-  //     const loginUrl = new URL('/admin/login', request.url)
-  //     loginUrl.searchParams.set('callbackUrl', currentPath)
-  //     return NextResponse.redirect(loginUrl)
-  //   }
-  // }
-
+  // If user is not authenticated and tries to access protected route
   if (!token && protectedPaths.includes(currentPath)) {
-    return NextResponse.redirect(new URL("/admin/login", request.url));
+    const loginUrl = new URL('/admin/login', request.url);
+    loginUrl.searchParams.set('callbackUrl', currentPath);
+    return NextResponse.redirect(loginUrl);
   }
 
-  // If user is authenticated and trying to access login page
-  if (token && !protectedPaths.includes(currentPath)) {
-    return NextResponse.redirect(new URL("admin/dashboard", request.url));
+  // If user is authenticated and tries to access login page
+  if (token && publicPaths.includes(currentPath)) {
+    return NextResponse.redirect(new URL('/admin/dashboard', request.url));
   }
 
   return NextResponse.next();
 }
 
-// Optionally, you can specify which paths the middleware should run on
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: [
+    /*
+     * Match all paths under /admin except _next/static, _next/image, favicon.ico
+     */
+    '/admin/:path*',
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+  ],
 };

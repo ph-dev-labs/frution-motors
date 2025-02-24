@@ -35,7 +35,7 @@ export default function AdminLoginPage() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const token = getCookie("auth");
-    console.log(token);
+  
 
   const createAdminMutation = useMutation({
     mutationFn: async (data: LoginCredentials) => {
@@ -47,7 +47,7 @@ export default function AdminLoginPage() {
       const token = "gdwyshtjfghsfdghfsgsfsf"; // Adjust based on your API response
       
       // Set cookie using cookies-next package
-      setCookie('auth', token, { 
+      setCookie('authFruition', token, { 
         maxAge: 60 * 60 * 24 * 7, // 7 days
         path: '/',
       });
@@ -57,13 +57,6 @@ export default function AdminLoginPage() {
       setCredentials({ email: "", password: "" }); // Reset form
     },
     onError: (error: any) => {
-      const token = "gdwyshtjfghsfdghfsgsfsf";
-      // Set cookie using cookies-next package, even in error case (for demonstration)
-      setCookie('auth', token, { 
-        maxAge: 60 * 60 * 24 * 7, // 7 days
-        path: '/',
-      });
-      
       toast.error(
         `Login failed: ${error.response?.data?.message || error.message}`
       );

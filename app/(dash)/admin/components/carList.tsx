@@ -9,7 +9,7 @@ import {
   Pagination,
 } from "react-bootstrap";
 import { Package, Calendar, Fuel, Trash2, Edit2 } from "lucide-react";
-import { Car } from "@/util/types";
+import { Car, formatPrice } from "@/util/types";
 import getSymbolFromCurrency from "currency-symbol-map";
 import { useRouter } from "next/navigation";
 
@@ -85,7 +85,7 @@ const CarList: React.FC<CarListProps> = ({ cars, onDelete, isDeleting }) => {
                   {car.title}
                   <Badge bg="success">
                     {getSymbolFromCurrency("NGN")}
-                    {car.price}
+                    {formatPrice(car.price)}
                   </Badge>
                 </Card.Title>
                 <Card.Text>

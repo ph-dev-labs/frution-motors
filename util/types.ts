@@ -20,3 +20,18 @@ export interface Car {
     icon: any;
     color: string;
   }
+
+
+ export const formatPrice = (price:any) => {
+  if (!price) return 'N/A';
+  
+  // Convert string to number if needed
+  const numPrice = typeof price === 'string' ? parseFloat(price) : price;
+  
+  if (isNaN(numPrice)) return 'N/A';
+  
+  return numPrice.toLocaleString('en-US', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  });
+};
